@@ -1,0 +1,2 @@
+CREATE DATABASE clients_db;
+CREATE DATABASE logs_db;
