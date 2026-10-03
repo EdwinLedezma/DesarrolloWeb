@@ -1,0 +1,15 @@
+# Configuración personal sugerida para ~/.gitconfig.
+# Sustituye los datos de identidad por los propios antes de aplicarla.
+[user]
+    name = Tu Nombre
+    email = tu-correo@ejemplo.com
+[init]
+    defaultBranch = main
+[fetch]
+    prune = true
+[pull]
+    rebase = false
+[push]
+    autoSetupRemote = true
+[merge]
+    ff = false
