@@ -1,5 +1,79 @@
 # Catálogos Backend
 
+## Práctica Gitflow: Épica 2 — mantenimiento de maquinaria
+
+Esta práctica implementa la segunda épica: registrar órdenes de mantenimiento y consultar su historial por número de serie o por turno actual. La funcionalidad está en `logs-service` y no usa anotaciones `@Transactional`, conforme al alcance de consultas e inserciones sin transacciones.
+
+### Funcionalidad entregada
+
+Cada orden registra `machineSerial`, `equipment`, `description`, `technician` y `maintenanceDate`. La fecha es opcional en la petición: si no se envía, el servidor usa la fecha actual.
+
+| Operación | Endpoint |
+|---|---|
+| Registrar orden completada | `POST /api/logs` |
+| Consultar todas las órdenes | `GET /api/logs` |
+| Consultar por serie | `GET /api/logs/machine/{serialNumber}` |
+| Consultar turno actual (fecha actual) | `GET /api/logs/current-shift` |
+| Consultar, actualizar o eliminar por ID | `GET`, `PUT`, `DELETE /api/logs/{id}` |
+
+Ejemplo de alta:
+
+```json
+{
+  "machineSerial": "MX-101",
+  "equipment": "Torno CNC",
+  "description": "Cambio de banda",
+  "technician": "María López",
+  "maintenanceDate": "2026-10-02"
+}
+```
+
+### Flujo Gitflow aplicado
+
+La rama de integración es `develop`. Desde ella se creó `feature/epica-2-mantenimiento`; ahí se realizaron los cambios y las pruebas. Para demostrar la integración de un commit específico entre ramas, se creó `feature/epica-2-gitflow-evidence`, se confirmó el commit `docs(git): add Gitflow configuration example` y se incorporó en la rama de la épica con `git cherry-pick`.
+
+```text
+develop
+  └── feature/epica-2-mantenimiento
+        ├── feat(logs): add machine maintenance records
+        └── cherry-pick: docs(git): add Gitflow configuration example
+
+feature/epica-2-gitflow-evidence
+  └── docs(git): add Gitflow configuration example
+```
+
+Los comandos previstos para publicar y fusionar en GitHub son:
+
+```bash
+git push -u origin feature/epica-2-mantenimiento
+# Crear en GitHub el Pull Request feature/epica-2-mantenimiento -> develop
+# Ejecutar el merge del Pull Request en GitHub y actualizar la rama local:
+git switch develop
+git pull --ff-only origin develop
+```
+
+El paso remoto quedó pendiente porque la credencial local `Josue1855` recibió `403 Permission denied` sobre el repositorio remoto `EdwinLedezma/DesarrolloWeb`. Por esa razón no se simuló ni se declaró realizada una fusión remota; es necesario que el propietario agregue esa cuenta como colaboradora, o iniciar sesión con una cuenta que tenga permisos de escritura. Además, la rama remota preexistente `feature` debe eliminarse antes de publicar `feature/epica-2-mantenimiento`, ya que Git no permite que una rama y un prefijo de ramas compartan ese nombre.
+
+### Configuración Git
+
+La identidad ya estaba configurada. La configuración recomendada para `~/.gitconfig` está versionada en [docs/gitconfig-gitflow.example](docs/gitconfig-gitflow.example): usa `main` como rama inicial, elimina referencias remotas obsoletas, crea seguimiento remoto automáticamente y conserva commits de merge. Para aplicarla manualmente:
+
+```bash
+git config --global init.defaultBranch main
+git config --global fetch.prune true
+git config --global pull.rebase false
+git config --global push.autoSetupRemote true
+git config --global merge.ff false
+```
+
+### Evidencia
+
+La validación específica ejecutada fue `mvn -pl logs-service test`: 2 pruebas, 0 fallos y 0 errores. Como validación final se ejecutó `mvn test` con Java 17: los cuatro servicios compilan y se completan 5 pruebas sin fallos ni errores. La única prueba omitida es la de integración de productos, porque requiere Docker/Testcontainers y Docker no está instalado en esta máquina.
+
+![Captura de la rama y el cherry-pick](docs/capturas/01-rama-y-cherry-pick.svg)
+
+![Captura de las pruebas exitosas](docs/capturas/02-pruebas-exitosas.svg)
+
 Monorepo Maven con cuatro microservicios independientes en Java 17 y Spring Boot 3. Cada módulo puede ejecutarse por separado y utiliza su propia base de datos.
 
 ## Requisitos

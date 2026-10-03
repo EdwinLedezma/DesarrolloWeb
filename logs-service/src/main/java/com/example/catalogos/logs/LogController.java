@@ -15,6 +15,14 @@ public class LogController {
     @GetMapping
     public List<LogEntry> findAll() { return service.findAll(); }
 
+    @GetMapping("/machine/{serialNumber}")
+    public List<LogEntry> findByMachine(@PathVariable String serialNumber) {
+        return service.findByMachineSerial(serialNumber);
+    }
+
+    @GetMapping("/current-shift")
+    public List<LogEntry> findCurrentShift() { return service.findCurrentShift(); }
+
     @GetMapping("/{id}")
     public LogEntry findById(@PathVariable String id) { return service.findById(id); }
 
