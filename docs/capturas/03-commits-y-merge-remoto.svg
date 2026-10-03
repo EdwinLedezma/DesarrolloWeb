@@ -1,0 +1,16 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="430" viewBox="0 0 1200 430" role="img" aria-label="Terminal con commits de Edwin Ledezma y merge remoto en develop">
+  <rect width="1200" height="430" fill="#0d1117" rx="12"/>
+  <circle cx="30" cy="28" r="9" fill="#ff5f56"/><circle cx="58" cy="28" r="9" fill="#ffbd2e"/><circle cx="86" cy="28" r="9" fill="#27c93f"/>
+  <text x="120" y="35" fill="#c9d1d9" font-family="monospace" font-size="18">EdwinLedezma — evidencia de commits y merge remoto</text>
+  <g font-family="monospace" font-size="19">
+    <text x="35" y="85" fill="#7ee787">edwin@desarrollo-web $ git log --oneline --decorate -6</text>
+    <text x="35" y="125" fill="#f2cc60">b7c7da9</text><text x="145" y="125" fill="#c9d1d9">(HEAD -&gt; develop, origin/develop) Merge pull request #1</text>
+    <text x="35" y="160" fill="#f2cc60">51c17d1</text><text x="145" y="160" fill="#c9d1d9">docs: record full Java 17 validation</text>
+    <text x="35" y="195" fill="#f2cc60">c4ac54f</text><text x="145" y="195" fill="#c9d1d9">fix: add explicit entity accessors for Java 17 builds</text>
+    <text x="35" y="230" fill="#f2cc60">63b0da6</text><text x="145" y="230" fill="#c9d1d9">docs: document Gitflow maintenance practice</text>
+    <text x="35" y="265" fill="#f2cc60">1e0e4b5</text><text x="145" y="265" fill="#c9d1d9">docs(git): add Gitflow configuration example</text>
+    <text x="35" y="300" fill="#f2cc60">2c32a83</text><text x="145" y="300" fill="#c9d1d9">feat(logs): add machine maintenance records</text>
+    <text x="35" y="350" fill="#7ee787">edwin@desarrollo-web $ git status --short --branch</text>
+    <text x="35" y="385" fill="#c9d1d9">## develop...origin/develop</text>
+  </g>
+</svg>

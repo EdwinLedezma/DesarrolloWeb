@@ -52,7 +52,7 @@ git switch develop
 git pull --ff-only origin develop
 ```
 
-El paso remoto quedó pendiente porque la credencial local `Josue1855` recibió `403 Permission denied` sobre el repositorio remoto `EdwinLedezma/DesarrolloWeb`. Por esa razón no se simuló ni se declaró realizada una fusión remota; es necesario que el propietario agregue esa cuenta como colaboradora, o iniciar sesión con una cuenta que tenga permisos de escritura. Además, la rama remota preexistente `feature` debe eliminarse antes de publicar `feature/epica-2-mantenimiento`, ya que Git no permite que una rama y un prefijo de ramas compartan ese nombre.
+La rama remota preexistente `feature` se eliminó antes de publicar `feature/epica-2-mantenimiento`, ya que Git no permite que una rama y un prefijo de ramas compartan ese nombre. Con la cuenta `EdwinLedezma` se publicó la rama, se creó el Pull Request [#1](https://github.com/EdwinLedezma/DesarrolloWeb/pull/1) y se fusionaron remotamente sus cinco commits en `develop`. El commit de integración remoto es `b7c7da9`.
 
 ### Configuración Git
 
@@ -73,6 +73,8 @@ La validación específica ejecutada fue `mvn -pl logs-service test`: 2 pruebas,
 ![Captura de la rama y el cherry-pick](docs/capturas/01-rama-y-cherry-pick.svg)
 
 ![Captura de las pruebas exitosas](docs/capturas/02-pruebas-exitosas.svg)
+
+![Captura del historial de commits y la fusión remota](docs/capturas/03-commits-y-merge-remoto.svg)
 
 Monorepo Maven con cuatro microservicios independientes en Java 17 y Spring Boot 3. Cada módulo puede ejecutarse por separado y utiliza su propia base de datos.
 
