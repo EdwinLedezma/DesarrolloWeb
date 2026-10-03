@@ -1,11 +1,11 @@
 <svg xmlns="http://www.w3.org/2000/svg" width="1200" height="340" viewBox="0 0 1200 340" role="img" aria-label="Terminal con resultados de pruebas Maven">
   <rect width="1200" height="340" fill="#0d1117" rx="12"/>
   <circle cx="30" cy="28" r="9" fill="#ff5f56"/><circle cx="58" cy="28" r="9" fill="#ffbd2e"/><circle cx="86" cy="28" r="9" fill="#27c93f"/>
-  <text x="120" y="35" fill="#c9d1d9" font-family="monospace" font-size="18">Validación de logs-service</text>
+  <text x="120" y="35" fill="#c9d1d9" font-family="monospace" font-size="18">Validación completa con Java 17</text>
   <g font-family="monospace" font-size="20">
-    <text x="35" y="85" fill="#7ee787">$ mvn -pl logs-service test</text>
-    <text x="35" y="135" fill="#c9d1d9">Running com.example.catalogos.logs.LogServiceTest</text>
-    <text x="35" y="175" fill="#7ee787">Tests run: 2, Failures: 0, Errors: 0, Skipped: 0</text>
+    <text x="35" y="85" fill="#7ee787">$ JAVA_HOME=/usr/lib/jvm/java-17-openjdk-amd64 mvn test</text>
+    <text x="35" y="135" fill="#c9d1d9">products-service · clients-service · suppliers-service · logs-service</text>
+    <text x="35" y="175" fill="#7ee787">Tests run: 5, Failures: 0, Errors: 0, Skipped: 1</text>
     <text x="35" y="235" fill="#c9d1d9">BUILD SUCCESS</text>
     <text x="35" y="285" fill="#8b949e">Maven 3.8.7 · Java 17 target · Spring Boot service</text>
   </g>

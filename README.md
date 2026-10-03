@@ -68,7 +68,7 @@ git config --global merge.ff false
 
 ### Evidencia
 
-La validación ejecutada fue `mvn -pl logs-service test`: 2 pruebas, 0 fallos y 0 errores.
+La validación específica ejecutada fue `mvn -pl logs-service test`: 2 pruebas, 0 fallos y 0 errores. Como validación final se ejecutó `mvn test` con Java 17: los cuatro servicios compilan y se completan 5 pruebas sin fallos ni errores. La única prueba omitida es la de integración de productos, porque requiere Docker/Testcontainers y Docker no está instalado en esta máquina.
 
 ![Captura de la rama y el cherry-pick](docs/capturas/01-rama-y-cherry-pick.svg)
 
