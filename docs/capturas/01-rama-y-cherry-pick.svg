@@ -1,0 +1,15 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="430" viewBox="0 0 1200 430" role="img" aria-label="Terminal con rama Gitflow y cherry-pick">
+  <rect width="1200" height="430" fill="#0d1117" rx="12"/>
+  <circle cx="30" cy="28" r="9" fill="#ff5f56"/><circle cx="58" cy="28" r="9" fill="#ffbd2e"/><circle cx="86" cy="28" r="9" fill="#27c93f"/>
+  <text x="120" y="35" fill="#c9d1d9" font-family="monospace" font-size="18">Gitflow — rama de la Épica 2</text>
+  <g font-family="monospace" font-size="20">
+    <text x="35" y="85" fill="#7ee787">$ git switch -c feature/epica-2-mantenimiento</text>
+    <text x="35" y="120" fill="#c9d1d9">Switched to a new branch 'feature/epica-2-mantenimiento'</text>
+    <text x="35" y="170" fill="#7ee787">$ git log --oneline -3</text>
+    <text x="35" y="205" fill="#f2cc60">d19be41</text><text x="145" y="205" fill="#c9d1d9">docs(git): add Gitflow configuration example</text>
+    <text x="35" y="240" fill="#f2cc60">71d341d</text><text x="145" y="240" fill="#c9d1d9">feat(logs): add machine maintenance records</text>
+    <text x="35" y="275" fill="#f2cc60">c25b2a6</text><text x="145" y="275" fill="#c9d1d9">Initial catalog services implementation</text>
+    <text x="35" y="325" fill="#7ee787">$ git cherry-pick d19be41</text>
+    <text x="35" y="360" fill="#c9d1d9">[feature/epica-2-mantenimiento d19be41] docs(git): add Gitflow configuration example</text>
+  </g>
+</svg>
